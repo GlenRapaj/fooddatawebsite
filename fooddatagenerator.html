@@ -663,13 +663,10 @@
 
 
 
-		<!-- Kontenieri ku vendeset artikulli -->
+		<!-- Kontenieri ku vendeset artikulli
 		<div  id="recipeArticleContainer">
-
-
 		</div>
-
-
+ 		-->
 
 
 		<!-- Kontenieri kuvendosen lista me receta -->
@@ -958,6 +955,14 @@
 			let singleRecipe = ( id ) =>{
 				// ska mbaruar
 
+				window.localStorage.removeItem("recipeid");
+				window.localStorage.setItem("recipeid", id );
+				// Redirecting to new page
+				// window.location.href = "file:///C:/Users/user/Desktop/food-website/fooddata.html";
+				window.location.href = "fooddata.html";
+
+
+				/*
 
 				let apiKey = 'apiKey=10571ff725bb4b7ebd3c133b0ae48a19' ;
 				let firstPartQueru = 'https://api.spoonacular.com/recipes/' + id + '/information?' ;
@@ -969,78 +974,6 @@
 					console.log(res.data);
 
 
-					/*
-								
-						<div class="row"> 
-							<div class="col-8">
-								<img class="img-fluid" src="https://spoonacular.com/recipeImages/646906-556x370.jpg" alt="...">
-								
-							</div>
-
-							<div class="col-4">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item text-info">Cras justo odio</li>
-									<li class="list-group-item text-info">Dapibus ac facilisis in</li>
-									<li class="list-group-item text-info">Morbi leo risus</li>
-									<li class="list-group-item text-info">Porta ac consectetur ac</li>
-									<li class="list-group-item text-info">Vestibulum at eros</li>
-								</ul>
-							</div>
-
-						</div>
-						
-						<div class="row"> 
-							<div class="col-8">
-								
-								<h1 class="text-success"> Recipe title </h1>
-								<div class="container">
-									<p class="text-start fs-3" >
-										article 
-									</p>
-								</div>
-
-
-								<hr class="bg-danger mydivider"/>
-
-								<div class="container" > 
-									<div class="row"> 
-										<div class=" col ">
-											<ul class="nav ms-3">
-												<li class="nav-item ">
-												<a class="nav-link text-center" aria-current="page" href="#">Active</a>
-												</li>
-												<li class="nav-item">
-												<a class="nav-link text-center" href="#">Link</a>
-												</li>
-												<li class="nav-item ">
-												<a class="nav-link text-center" href="#">Link</a>
-												</li>
-												<li class="nav-item">
-												<a class="nav-link text-center " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-												</li>
-											</ul>	
-										</div>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-4">
-
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item text-info">Cras justo odio</li>
-									<li class="list-group-item text-info">Dapibus ac facilisis in</li>
-									<li class="list-group-item text-info">Morbi leo risus</li>
-									<li class="list-group-item text-info">Porta ac consectetur ac</li>
-									<li class="list-group-item text-info">Vestibulum at eros</li>
-								</ul>	
-							</div>	
-
-						</div>	
-
-				
-
-					*/
 
 					let resData = '' ;
 
@@ -1077,18 +1010,6 @@
 
 					resData = resData + ' </ul> </div> ' ;
 
-
-					//res.data.servings
-					
-					//res.data.spoonacularSourceUrl
-					//res.data.summary
-					
-					
-
-					// arrays with object
-					//res.data.extendedIngredients   // .amount  .consistency .image .originalName  .measures.metric.unitLong
-					//res.data.analyzedInstructions    .steps
-
 					document.querySelector('#recipeArticleContainer').innerHTML  = resData ;
 
 				})
@@ -1096,6 +1017,8 @@
 					// handle error
 					console.log(error);
 				}) ;
+
+				*/
 
 			}
 
