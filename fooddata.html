@@ -32,12 +32,6 @@
             overflow-y: auto;
             overflow-x: scroll;
             width: inherit;
-
-            /*
-					min-width: 576px;
-					max-width: 576;
-				*/
-
         }
 
         .form-check.form-check-inline {
@@ -234,18 +228,14 @@
             axios.get(fullQuery)
                 .then(function (res) {
                     console.log(res.data);
-
                     let resData = '';
-
                     resData = resData + '<div class="row"> <div class="col-sm-8 col-12"> ';
                     resData = resData + '<img class="img-fluid" src="' + res.data.image + '" alt="...">';
                     resData = resData + '</div> <div class="col-sm-4 col-12"> <ul class="list-group list-group-flush"> ';
 
-
                     for (let perberes of res.data.extendedIngredients) {
                         resData = resData + '<li class="list-group-item text-info">' + perberes.originalName + ', ' + perberes.amount + ' ' + perberes.measures.metric.unitLong + '</li>';
                     }
-
                     resData = resData + '</ul> </div> </div> <div class="row"> <div class="col-sm-8 col-12">  ';
                     resData = resData + '<h1 class="text-success">' + res.data.title + '</h1>';
                     resData = resData + '<div class="container"> <p class="text-start fs-3" >';
@@ -259,8 +249,6 @@
                     resData = resData + '<li class="list-group-item text-warning my-li-item">  Ready For : ' + res.data.readyInMinutes + ' Minutes </li>';
                     resData = resData + '<li class="list-group-item text-warning my-li-item">  <a class="nav-link text-center" aria-current="page" href="' + res.data.sourceUrl + '"> Read article </a>  </li>';
                     resData = resData + '</ul> </div> </div> </div> </div>';
-
-
                     resData = resData + ' <div class="col-4"> <ul class="list-group list-group-flush">';
 
                     for (let pjata of res.data.dishTypes) {
