@@ -127,11 +127,9 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
 </head>
 
 <body>
-
     <h1 class="text-center text-primary mt-3 mb-3 title-decoration"> Page of Recipe Details. </h1>
 
     <div class="container mt-5 mb-5">
@@ -216,7 +214,6 @@
     </div>
 
     <script>
-
         let singleRecipe = () => {
             let id = window.localStorage.getItem("recipeid");
             console.log('In sesion we have key-value:  ', id);
@@ -255,21 +252,17 @@
                         // console.log( 'pjata : ' , pjata );
                         resData = resData + '<li class="list-group-item text-info">' + pjata + '</li>';
                     }
-
                     resData = resData + ' </ul> </div> ';
                     document.querySelector('#recipeArticleContainer').innerHTML = resData;
-
                 })
                 .catch(function (error) {
                     // handle error
                     console.log(error);
                 });
-
         }
         singleRecipe()
 
     </script>
 
 </body>
-
 </html>
