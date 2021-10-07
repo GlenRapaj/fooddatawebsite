@@ -29,13 +29,7 @@
 				flex-direction: row;
 				overflow-y: auto;
 				overflow-x: scroll;
-				width: inherit;
-
-				/*
-					min-width: 576px;
-					max-width: 576;
-				*/
-				
+				width: inherit;	
 			}
 
 			.form-check.form-check-inline {
@@ -54,8 +48,7 @@
 
 			.img-fluid {
 				max-width: 100%;
-				height: 100% !important;;
-				/*height: fit-content !important;*/
+				height: 100% !important;
 			}
 
 			.card {
@@ -108,7 +101,6 @@
 				width: 90%;
 			}
 
-
 			/*
 				media query per 
 				screen width less than 576px
@@ -116,17 +108,13 @@
 
 		</style>
 
-  
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-			
-
   	</head>
-    <body >
+    <body>
 
 		<!-- fillon navbar -->
 		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -136,7 +124,6 @@
 			</button>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			  <ul class="navbar-nav">
-
 				<li class="nav-item">
 					<a class="nav-link" href="winerecomandation.html"> Wine Recomandation </a>
 				  </li>
@@ -155,20 +142,15 @@
 					<li class="nav-item">
 					  <a class="nav-link" href="about.html"> About </a>
 				  </li> 
-
 			  </ul>
 			</div>  
 		</nav>
 
 		<!-- mbaron navbar -->
 
-
-
 		<h1 class="display-1 text-center text-warning pt-5 pb-5 " > Cocktails </h1>
         
-        
-		<div class="container bg-light pt-5 pb-3 ">
-			    
+		<div class="container bg-light pt-5 pb-3 ">   
             <div class="row" >
                 <div class="col-5 mb-1 ml-3 " >
                     <div class="form-group">
@@ -181,7 +163,6 @@
                         <button class="btn btn-success" onclick="cocbyname()" > Search </button>
                     </div>
                 </div>
-    
             </div>
 
             <div class="row" >
@@ -196,7 +177,6 @@
                         <button class="btn btn-success" onclick="cocfirstlett()" > Search </button>
                     </div>
                 </div>
-    
             </div>
 
             <div class="row " >
@@ -211,41 +191,21 @@
                         <button class="btn btn-success " onclick="ingnam()" > Search </button>
                     </div>
                 </div>
-
-            </div>
-
-            
+            </div>   
         </div>
 
 
 		<div class="container mt-auto mb-5 bg-light">
-			<div class="row align-items-end" >
-
-                
+			<div class="row align-items-end">
 				<div class="col-sm-1 order-last">
 					
                     <ul class="list-group list-group-flush ml-3 ">
                         <li class="list-group-item clearfix " onclick="alc()" > Alcoholic Cocktails </li>
                         <li class="list-group-item clearfix " onclick="nonalc()" > Non Alcoholic Cocktails </li>
-
                     </ul>
-                
-                </div>
-				
+                </div>	
 			</div>
 		</div>
-
-
-
-
-		<!-- Kontenieri ku vendeset artikulli 
-		<div  id="recipeArticleContainer">
-
-
-		</div>
-
-		-->
-
 
 		<!-- Kontenieri kuvendosen lista me receta -->
 		<div class="container" id="incomeDataContainer">
@@ -260,9 +220,6 @@
         <!--  Footer -->
 
 		<footer  data-rv-view="8793">
-
-    
-
 			<div class=" bg-dark text-light ">
 				<div class="media-container-row">
 					<div class="col-md-3">
@@ -295,27 +252,20 @@
 					</div>
 				</div>
 			</div>
-		
-		
-		
-		
-		</footer>  <!-- End  Footer -->
-
-
+		</footer> 
 
 		<script>
 
 			let alc = (  ) => {
-				
 				let fullQuery = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic' ;
 
 				axios.get(fullQuery)
 				.then(function (res) {
-                    console.log(res.data);
+                    			console.log(res.data);
                     
 					let dataToShow = '' ;
 
-                    for( let pije of res.data.drinks ){
+                    			for( let pije of res.data.drinks ){
                         
 						dataToShow = dataToShow + '<div class="card shadow " > <div class="row no-gutters"> <div class="col-sm-4"> ' ;
 						dataToShow = dataToShow + '<img class="img-fluid" src="' + pije.strDrinkThumb + '" alt="...">' ;
@@ -338,14 +288,10 @@
 							dataToShow = dataToShow + ' <span class="badge badge-primary"> ' + pije.strGlass + ' </span> ' ;
 						}
 						dataToShow = dataToShow + '</div>' ;
-
-
-
 						dataToShow = dataToShow + '<ul class="list-group">' ;
 
 						if( pije.strIngredient1 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient1 ;
-							
 							if( pije.strMeasure1 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure1 + ' </span>' ;
 							} 
@@ -354,7 +300,6 @@
 
 						if( pije.strIngredient2 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient2 ;
-							
 							if( pije.strMeasure2 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure2 + ' </span>' ;
 							} 
@@ -372,13 +317,11 @@
 
 						if( pije.strIngredient4 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient4 ;
-							
 							if( pije.strMeasure4 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure4 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient5 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient5 ;
 							
@@ -387,7 +330,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient6 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient6 ;
 							
@@ -396,7 +338,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient7 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient7 ;
 							
@@ -405,7 +346,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient8 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient8 ;
 							
@@ -414,7 +354,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient9 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient9 ;
 							
@@ -423,7 +362,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient10 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient10 ;
 							
@@ -432,7 +370,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient11 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient11 ;
 							
@@ -441,7 +378,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient12 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient12 ;
 							
@@ -450,7 +386,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient13 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient13 ;
 							
@@ -459,7 +394,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient14 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient14 ;
 							
@@ -468,7 +402,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient15 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient15 ;
 							
@@ -477,15 +410,11 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-						
 						dataToShow = dataToShow + '</ul>';
-
 						dataToShow = dataToShow + '</div> </div> </div> </div>' ;
 						
                         
                     }
-
-                    //document.querySelector('#recipeArticleContainer').innerHTML  = nutrientsToShow ;
 					document.querySelector('#incomeDataContainer').innerHTML  = dataToShow ;
 
 				})
@@ -497,55 +426,39 @@
             }
 
 			let nonalc = (  ) => {
-                
 				let fullQuery = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic' ;
-
 				axios.get(fullQuery)
 				.then(function (res) {
-                    console.log(res.data);
-                    
+                    			console.log(res.data);
 					let dataToShow = '' ;
 
-                    for( let pije of res.data.drinks ){
-                        
+			    		for( let pije of res.data.drinks ){
 						dataToShow = dataToShow + '<div class="card shadow " > <div class="row no-gutters"> <div class="col-sm-4"> ' ;
 						dataToShow = dataToShow + '<img class="img-fluid" src="' + pije.strDrinkThumb + '" alt="...">' ;
 						dataToShow = dataToShow + '</div> <div class="col-sm-8"> <div class="card-body">' ;
 						dataToShow = dataToShow + '<h5 class="card-title">' + pije.strDrink + '</h5>';
 						dataToShow = dataToShow + '<p class="card-text">' +  pije.strInstructions + '</p>';
-						
-
 						dataToShow = dataToShow + '<div class="card-body">' ;
-
 						if( pije.strAlcoholic != null ){
 							dataToShow = dataToShow + ' <span class="badge badge-primary"> ' + pije.strAlcoholic + ' </span>' ;
 						}
-
 						if( pije.strCategory != null ){
 							dataToShow = dataToShow + ' <span class="badge badge-primary"> ' + pije.strCategory + ' </span>' ;
-						}
-							
+						}	
 						if( pije.strGlass != null ){
 							dataToShow = dataToShow + ' <span class="badge badge-primary"> ' + pije.strGlass + ' </span> ' ;
 						}
 						dataToShow = dataToShow + '</div>' ;
-
-
-
 						dataToShow = dataToShow + '<ul class="list-group">' ;
-
 						if( pije.strIngredient1 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient1 ;
-							
 							if( pije.strMeasure1 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure1 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient2 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient2 ;
-							
 							if( pije.strMeasure2 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure2 + ' </span>' ;
 							} 
@@ -560,7 +473,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient4 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient4 ;
 							
@@ -569,16 +481,13 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient5 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient5 ;
-							
 							if( pije.strMeasure5 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure5 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient6 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient6 ;
 							
@@ -587,7 +496,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient7 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient7 ;
 							
@@ -596,7 +504,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient8 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient8 ;
 							
@@ -605,7 +512,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient9 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient9 ;
 							
@@ -614,7 +520,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient10 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient10 ;
 							
@@ -623,7 +528,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient11 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient11 ;
 							
@@ -632,7 +536,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient12 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient12 ;
 							
@@ -641,7 +544,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient13 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient13 ;
 							
@@ -650,7 +552,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient14 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient14 ;
 							
@@ -659,7 +560,6 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient15 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient15 ;
 							
@@ -668,15 +568,12 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-						
 						dataToShow = dataToShow + '</ul>';
-
 						dataToShow = dataToShow + '</div> </div> </div> </div>' ;
 						
                         
                     }
 
-                    //document.querySelector('#recipeArticleContainer').innerHTML  = nutrientsToShow ;
 					document.querySelector('#incomeDataContainer').innerHTML  = dataToShow ;
 
 				})
@@ -692,11 +589,9 @@
                 
                 let dataparam = document.querySelector('#cocbyname').value.trim() ;
 				let fullQuery = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + dataparam ;
-
 				axios.get(fullQuery)
 				.then(function (res) {
                     console.log(res.data.drinks);
-
                     let dataToShow = '' ;
 
                     for( let pije of res.data.drinks ){
@@ -706,36 +601,27 @@
 						dataToShow = dataToShow + '</div> <div class="col-sm-8"> <div class="card-body">' ;
 						dataToShow = dataToShow + '<h5 class="card-title">' + pije.strDrink + '</h5>';
 						dataToShow = dataToShow + '<p class="card-text">' +  pije.strInstructions + '</p>';
-						
-
 						dataToShow = dataToShow + '<div class="card-body">' ;
 
 						if( pije.strAlcoholic != null ){
 							dataToShow = dataToShow + ' <span class="badge badge-primary"> ' + pije.strAlcoholic + ' </span> ' ;
 						}
-
 						if( pije.strCategory != null ){
 							dataToShow = dataToShow + ' <span class="badge badge-primary"> ' + pije.strCategory + ' </span> ' ;
-						}
-							
+						}	
 						if( pije.strGlass != null ){
 							dataToShow = dataToShow + ' <span class="badge badge-primary"> ' + pije.strGlass + ' </span> ' ;
 						}
 						dataToShow = dataToShow + '</div>' ;
-
-
-
 						dataToShow = dataToShow + '<ul class="list-group">' ;
 
 						if( pije.strIngredient1 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient1 ;
-							
 							if( pije.strMeasure1 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure1 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient2 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient2 ;
 							
@@ -744,16 +630,13 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient3 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient3 ;
-							
 							if( pije.strMeasure3 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure3 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient4 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient4 ;
 							
@@ -762,70 +645,57 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient5 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient5 ;
-							
 							if( pije.strMeasure5 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure5 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient6 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient6 ;
-							
 							if( pije.strMeasure6 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure6 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient7 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient7 ;
-							
 							if( pije.strMeasure7 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure7 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient8 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient8 ;
-							
+	
 							if( pije.strMeasure8 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure8 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient9 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient9 ;
-							
 							if( pije.strMeasure9 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure9 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient10 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient10 ;
-							
+	
 							if( pije.strMeasure10 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure10 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient11 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient11 ;
-							
 							if( pije.strMeasure11 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure11 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient12 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient12 ;
 							
@@ -834,16 +704,13 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient13 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient13 ;
-							
 							if( pije.strMeasure13 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure13 + ' </span>' ;
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient14 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient14 ;
 							
@@ -852,10 +719,8 @@
 							} 
 							dataToShow = dataToShow + '</li>';
 						}
-
 						if( pije.strIngredient15 != null ){
 							dataToShow = dataToShow + '<li class="list-group-item d-flex justify-content-between align-items-center"> ' + pije.strIngredient15 ;
-							
 							if( pije.strMeasure15 != null ){ 
 								dataToShow = dataToShow + '<span class="badge badge-primary badge-pill"> ' + pije.strMeasure15 + ' </span>' ;
 							} 
@@ -863,9 +728,6 @@
 						}
 						
 						dataToShow = dataToShow + '</ul>';
-
-						// dataToShow = dataToShow + '<a href="#" class="card-link" onclick="singleRecipe(' +  pije.id + ')" > Recipe </a>' ;
-						
 						dataToShow = dataToShow + '</div> </div> </div> </div>' ;
 						
                         
@@ -883,16 +745,16 @@
 
 			let cocfirstlett = (  ) => {
                 
-                let dataparam = document.querySelector('#cocfirstlett').value.trim() ;
+                		let dataparam = document.querySelector('#cocfirstlett').value.trim() ;
 				let fullQuery = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=' + dataparam ;
 
 				axios.get(fullQuery)
 				.then(function (res) {
-                    console.log(res.data);
+                    			console.log(res.data);
                     
 					let dataToShow = '' ;
 
-                    for( let pije of res.data.drinks ){
+                    			for( let pije of res.data.drinks ){
                     
 						dataToShow = dataToShow + '<div class="card shadow " > <div class="row no-gutters"> <div class="col-sm-4"> ' ;
 						dataToShow = dataToShow + '<img class="img-fluid" src="' + pije.strDrinkThumb + '" alt="...">' ;
